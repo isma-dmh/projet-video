@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Video
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('styles/video/show.css') }}">
+{% endblock %}
+
+{% block body %}
+
+	<div class="video-show">
+		<div class="player-wrap">
+			<iframe src="{{ video.videoLink }}" title="Titre de la vidéo" width="640" height="480" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+		</div>
+
+		<div class="video-info">
+			<h1 class="title">{{video.title}}</h1>
+			<p class="date">{{ video.createdAt|date("d/m/Y") }}</p>
+			<p class="author">
+				{{"Ajoutée par"|trans}}
+				{{ video.user.firstname ~" "~video.user.lastname }}
+			</p>
+			<p class="description">{{ video.description }}</p>
+		</div>
+	</div>
+
+{% endblock %}

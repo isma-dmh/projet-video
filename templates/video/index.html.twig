@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Video index
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('styles/video/index.css') }}">
+{% endblock %}
+
+{% block body %}
+	<div class="video-grid">
+		{% for video in videos %}
+			<article class="card-video">
+				<iframe class="thumb-wrap" src={{"#{video.videoLink}?mute=1"}} frameborder="0"></iframe>
+				<div class="card-video-body">
+					<div class="meta">
+						<a href="{{ path('app_video_show', {'id': video.id}) }}" class="title">
+							{{ video.title|u.truncate(20," . . .",false) }}
+						</a>
+						<p class="description">{{ video.description|u.truncate(25,". . .",false) }}</p>
+						<p class="stats">{{ video.createdAt|ago }}</p>
+						<p class="author">
+							{{"Ajoutée par"|trans}}
+							{{ video.user.firstname ~" "~video.user.lastname }}
+						</p>
+					</div>
+				</div>
+			</article>
+		{% else %}
+			<div class="empty-state">
+				<p>Aucune vidéo pour le moment.</p>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

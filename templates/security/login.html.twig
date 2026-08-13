@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	{{parent() }}
+	<link rel="stylesheet" href="{{ asset('styles/security/formLogin.css') }}">
+{% endblock %}
+
+{% block title %}Log in!
+{% endblock %}
+
+{% block body %}
+	<form method="post" class="login-form-page">
+		{% if error %}
+			<div class="error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+		{% endif %}
+
+		{% if app.user %}
+			<div class="mb-3">
+				You are logged in as
+				{{ app.user.userIdentifier }},
+				<a href="{{ logout_path() }}">Logout</a>
+			</div>
+		{% endif %}
+
+		<h1 class="page-title">{{"Please sign in"|trans}}</h1>
+		<div class="form-group">
+			<label for="username">{{"login.email"|trans}}</label>
+			<input class="form-input" type="email" value="{{ last_username }}" name="_username" id="username" class="form-control" autocomplete="email" required autofocus>
+		</div>
+		<div class="form-group">
+			<label for="password">{{"login.password"|trans}}</label>
+			<input class="form-input" type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
+			<input type="hidden" name="_csrf_token" data-controller="csrf-protection" value="{{ csrf_token('authenticate') }}">
+			<a class="forgot" href="#">{{"login.forgot"|trans}}</a>
+		</div>
+
+		<button class="btn-submit" type="submit">
+			{{"login.submit"|trans}}
+		</button>
+		<div class="not-register">
+			<span>
+				{{"Not registered yet ?"|trans }}
+				<a href="#">{{"Create an account"|trans }}</a>
+			</span>
+		</div>
+	</form>
+{% endblock %}

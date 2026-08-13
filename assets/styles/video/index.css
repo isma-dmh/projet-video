@@ -1,0 +1,81 @@
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
+    gap: var(--gap) 16px;
+    padding: 24px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+/* ---------- Card ---------- */
+.card-video {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.thumb-wrap {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    aspect-ratio: unset; /* on annule le 16/9 pour forcer la taille fixe */
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--surface);
+}
+
+.card-video:hover .thumb-wrap {
+    transform: scale(1.04);
+}
+
+.card-video-body {
+    display: flex;
+    gap: 12px;
+    padding-top: 12px;
+}
+
+.meta {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+.title {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.description,
+.stats,
+.author {
+    font-size: 13px;
+    color: var(--text-dim);
+}
+
+/* ---------- Empty state ---------- */
+.empty-state {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 16px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+    .topbar {
+        padding: 12px 16px;
+    }
+}

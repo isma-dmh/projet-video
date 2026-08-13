@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Video
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('styles/video/create-edit.css') }}">
+{% endblock %}
+
+{% block body %}
+	<div class="video-form-page">
+		<h1 class="page-title">{{"Éditer la video"|trans}}</h1>
+		{{ include('video/_form.html.twig', {'button_label': 'Update'}) }}
+	</div>
+{% endblock %}

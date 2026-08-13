@@ -1,0 +1,17 @@
+'Ajouter une nouvelle vidéo': 'Add a new video'
+'Éditer la video': 'Edit video'
+videoForm.label.title: Title
+videoForm.label.videoLink: 'Video link'
+videoForm.label.description: Description
+videoForm.label.submit: 'Publish video'
+videoForm.label.update: 'Edit video'
+videoForm.placeholder.title: 'Video title'
+videoForm.placeholder.description: 'Describe your video in a few words...'
+'Ajoutée par': By
+'Please sign in': 'Sign in'
+login.email: Email
+login.password: Password
+login.submit: Login
+login.forgot: 'Forgot password ?'
+'Not registered yet ?': 'Not registered yet ?'
+'Create an account': 'Create an account'

@@ -1,0 +1,25 @@
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{asset('styles/header.css')}}">
+{% endblock %}
+
+<header class="topbar">
+	<a href="{{path('app_home') }}" class="logo">
+		<img src="{{asset('images/logo.png') }}" alt="logo"/>
+		<span>Cfitube</span>
+	</a>
+	<nav>
+		{% if app.user %}
+			<a href="{{ path('app_video_create') }}">
+				<img class="svg" src="{{ asset('svg/create.svg') }}" alt="">
+			</a>
+			<a href="{{ path('app_logout') }}">
+				<img class="svg" src="{{ asset('svg/logout.svg') }}" alt="">
+			</a>
+		{% else %}
+			<a href="{{ path('app_login') }}">
+				<img class="svg" src="{{ asset('svg/login.svg') }}" alt="">
+			</a>
+		{% endif %}
+		{{ include("/layouts/partials/_languages.html.twig") }}
+	</nav>
+</header>
