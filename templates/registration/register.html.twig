@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('styles/registration/formRegistration.css') }}">
+{% endblock %}
+
+
+{% block body %}
+	<div class="register-form-page">
+		{% for flash_error in app.flashes('verify_email_error') %}
+			<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+		{% endfor %}
+
+		<h1 class="page-title">{{"registrationForm.title"|trans}}</h1>
+
+		{{ form_errors(registrationForm) }}
+
+		{{ form_start(registrationForm) }}
+		<div class="form-group">
+			{{ form_label(registrationForm.lastname) }}
+			{{ form_widget(registrationForm.lastname, {'attr': {'class': 'form-input'}}) }}
+			{{ form_errors(registrationForm.lastname) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(registrationForm.firstname) }}
+			{{ form_widget(registrationForm.firstname, {'attr': {'class': 'form-input'}}) }}
+			{{ form_errors(registrationForm.firstname) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(registrationForm.email) }}
+			{{ form_widget(registrationForm.email, {'attr': {'class': 'form-input'}}) }}
+			{{ form_errors(registrationForm.email) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(registrationForm.plainPassword) }}
+			{{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-input'}}) }}
+			{{ form_errors(registrationForm.plainPassword) }}
+		</div>
+
+		<div class="form-group form-check">
+			{{ form_label(registrationForm.agreeTerms) }}
+			{{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'checkbox-terms'}}) }}
+			{{ form_errors(registrationForm.agreeTerms) }}
+		</div>
+
+		<div class="form-actions">
+			<button type="submit" class="btn-submit">{{"registrationForm.submit"|trans}}</button>
+		</div>
+		{{ form_end(registrationForm) }}
+	</div>
+{% endblock %}

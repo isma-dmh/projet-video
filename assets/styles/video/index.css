@@ -1,3 +1,81 @@
+/* ---------- Search bar ---------- */
+.search-form {
+    display: flex;
+    justify-content: center;
+    padding: 24px 24px 0;
+}
+
+.search-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    background: var(--surface);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    padding: 4px 4px 4px 18px;
+    transition: border-color 0.2s ease;
+}
+
+.search-wrap:focus-within {
+    border-color: var(--accent);
+}
+
+.search-icon {
+    display: flex;
+    align-items: center;
+    color: var(--text-dim);
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.search-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.search-wrap input[type="text"] {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text);
+    font-size: 14px;
+    font-family: inherit;
+    padding: 10px 0;
+}
+
+.search-wrap input[type="text"]::placeholder {
+    color: var(--text-dim);
+}
+
+.search-submit {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+        background 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.search-submit:hover {
+    opacity: 0.9;
+}
+
+.search-results-info {
+    font-size: 13px;
+    color: var(--text-dim);
+    text-align: center;
+    padding: 0 24px;
+    margin: 4px 0;
+}
+
 .video-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, 300px);
@@ -7,6 +85,7 @@
     max-width: 1600px;
     margin: 0 auto;
 }
+
 /* ---------- Card ---------- */
 .card-video {
     display: flex;
@@ -16,16 +95,52 @@
 
 .thumb-wrap {
     position: relative;
-    width: 300px;
+    width: 100%;
     height: 200px;
-    aspect-ratio: unset; /* on annule le 16/9 pour forcer la taille fixe */
+    aspect-ratio: unset;
     border-radius: var(--radius);
     overflow: hidden;
     background: var(--surface);
 }
 
+.thumb-wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
 .card-video:hover .thumb-wrap {
     transform: scale(1.04);
+}
+
+.card-video.premium {
+    background: rgba(251, 191, 36, 0.05);
+    border-radius: var(--radius);
+    padding: 6px;
+}
+
+.card-video.premium .thumb-wrap {
+    position: relative;
+}
+
+.card-video.premium .thumb-wrap::after {
+    content: "★ PREMIUM";
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #1a1a1a;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.card-video.premium .title {
+    color: #f59e0b;
 }
 
 .card-video-body {
@@ -72,10 +187,84 @@
     font-size: 16px;
 }
 
+/* ---------- Pagination ---------- */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.pagination-pages {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination-item a,
+.pagination-item.current {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 10px;
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text-dim);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.pagination-item a:hover {
+    background: rgba(255, 0, 51, 0.15);
+    color: var(--text);
+}
+
+.pagination-item.current {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+}
+
+.pagination-item.first a,
+.pagination-item.last a {
+    font-size: 16px;
+    color: var(--text-dim);
+}
+
+.pagination-item.previous a,
+.pagination-item.next a {
+    font-size: 16px;
+}
+
 /* ---------- Responsive ---------- */
 
 @media (max-width: 640px) {
+    .search-wrap {
+        padding-left: 14px;
+    }
+
+    .search-submit {
+        padding: 10px 14px;
+        font-size: 12px;
+    }
+
     .topbar {
         padding: 12px 16px;
+    }
+
+    .pagination-pages .pagination-item.page {
+        display: none;
+    }
+
+    .pagination-pages .pagination-item.current {
+        display: flex;
     }
 }

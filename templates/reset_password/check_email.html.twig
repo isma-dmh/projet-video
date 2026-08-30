@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ "resetPassword.emailSent.title"|trans }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('styles/reset/checkEmail.css') }}">
+{% endblock %}
+
+{% block body %}
+	<div class="reset-password-page">
+		<div class="reset-password-card">
+
+			<div class="reset-icon">
+				✉️
+			</div>
+
+			<h1 class="page-title">{{ "resetPassword.emailSent.title"|trans }}</h1>
+
+			<p class="reset-text">
+				{{ "resetPassword.emailSent.description"|trans }}
+			</p>
+
+			<p class="reset-expiry">
+				{{ "resetPassword.emailSent.expiry"|trans({
+                    'time': '2'
+                }) }}
+			</p>
+
+			<div class="reset-footer">
+				<p>
+					{{ "resetPassword.emailSent.noEmail"|trans }}
+					<a href="{{ path('app_forgot_password_request') }}">{{ "resetPassword.emailSent.tryAgain"|trans }}</a>
+				</p>
+			</div>
+
+		</div>
+	</div>
+{% endblock %}

@@ -1,17 +1,74 @@
-'Ajouter une nouvelle vidéo': 'Add a new video'
-'Éditer la video': 'Edit video'
+"Ajouter une nouvelle vidéo": "Add a new video"
+"Éditer la video": "Edit video"
 videoForm.label.title: Title
-videoForm.label.videoLink: 'Video link'
+videoForm.label.videoLink: "Video link"
 videoForm.label.description: Description
-videoForm.label.submit: 'Publish video'
-videoForm.label.update: 'Edit video'
-videoForm.placeholder.title: 'Video title'
-videoForm.placeholder.description: 'Describe your video in a few words...'
-'Ajoutée par': By
-'Please sign in': 'Sign in'
+videoForm.label.premium: "Premium video"
+videoForm.label.submit: "Publish video"
+videoForm.label.update: "Edit video"
+videoForm.placeholder.title: "Video title"
+videoForm.placeholder.description: "Describe your video in a few words..."
+video.author: By
+"Please sign in": "Sign in"
 login.email: Email
 login.password: Password
 login.submit: Login
-login.forgot: 'Forgot password ?'
-'Not registered yet ?': 'Not registered yet ?'
-'Create an account': 'Create an account'
+login.forgot: "Forgot password ?"
+"Not registered yet ?": "Not registered yet ?"
+"Create an account": "Create an account"
+registrationForm.lastname: Lastname
+registrationForm.firstname: Firstname
+registrationForm.email: Email
+registrationForm.plainPassword: Password
+registrationForm.agreeTerms: "Agree Terms"
+registrationForm.submit: "Sign up"
+registrationForm.title: Register
+registrationController.registered: "Your account has been successfully created."
+registrationController.alreadyConnected: "Already Connected !"
+registrationController.emailVerified: "Your email address has been verified."
+securityController.alreadyConnected: "Already Connected !"
+requestForm.title: "Reset your password"
+requestForm.email: Email
+requestForm.description: "Enter your email address, and we will send you a link to reset your password."
+requestForm.submit: "Send password reset email"
+resetPassword.emailSent.title: "Email sent"
+resetPassword.emailSent.description: "If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password."
+resetPassword.emailSent.expiry: "This link will expire in {time} hour(s)."
+resetPassword.emailSent.noEmail: "Didn't receive an email? Check your spam folder or"
+resetPassword.emailSent.tryAgain: "try again"
+resetForm.title: "Reset your password"
+resetForm.password: "New password"
+resetForm.repeatPassword: "Repeat password"
+resetForm.submit: "Reset password"
+"Account successfuly updated !": "Account successfuly updated !"
+profile.title: "My profile"
+profile.welcome: "Welcome {name}"
+profile.myProfile: "My profile"
+profile.createdAt: "Account created on {date}"
+profile.editButton: "Edit profile"
+profile.myVideos: "My videos"
+profile.noVideos: "No videos published"
+profile.details: Details
+profile.edit: Edit
+profile.delete: Delete
+profile.delete.confirm: "Are you sure you want to delete this video ?"
+profile.postedAgo: "{time} by {author}"
+usermonForm.title: "Edit profile"
+usermonForm.cancel: Cancel
+usermonForm.submit: Edit
+userForm.firstname: Firstname
+userForm.lastname: Lastname
+accountController.account.NotConnected: "You must login to have access to your account !"
+accountController.edit.NotConnected: "You must login to edit your account !"
+videoController.edit.successfully: "Video edited successfully !"
+videoController.create.NotConnected: "You must login to add a video !"
+videoController.create.NotVerified: "Verify your profile to add a video!"
+videoController.create.successfully: "Video added successfully !"
+videoController.show.NotVerified: "Access denied !"
+videoController.edit.NotConnected: "You must login to edit a video !"
+videoController.edit.NotUser: "Access denied !"
+videoController.delete: 'The video "{title}" has been successfully deleted.'
+videoController.delete.delete_error: "Failed to delete the video. Please try again."
+video.search.results: '{count, plural, one {# video found for the search term "{query}"} other {# videos found for the search term "{query}"}}'
+video.search.empty: 'No video found for the search term "{query}"'
+video.empty: "No videos yet."

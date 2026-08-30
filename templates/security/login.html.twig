@@ -31,7 +31,7 @@
 			<label for="password">{{"login.password"|trans}}</label>
 			<input class="form-input" type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
 			<input type="hidden" name="_csrf_token" data-controller="csrf-protection" value="{{ csrf_token('authenticate') }}">
-			<a class="forgot" href="#">{{"login.forgot"|trans}}</a>
+			<a class="forgot" href="{{ path('app_forgot_password_request') }}">{{"login.forgot"|trans}}</a>
 		</div>
 
 		<button class="btn-submit" type="submit">
@@ -40,7 +40,7 @@
 		<div class="not-register">
 			<span>
 				{{"Not registered yet ?"|trans }}
-				<a href="#">{{"Create an account"|trans }}</a>
+				<a href="{{path('app_register')}}">{{"Create an account"|trans }}</a>
 			</span>
 		</div>
 	</form>

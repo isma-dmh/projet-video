@@ -22,6 +22,12 @@
 	{{ form_errors(form.description) }}
 </div>
 
+<div class="form-group form-check">
+	{{ form_label(form.premiumVideo) }}
+	{{ form_widget(form.premiumVideo, {'attr': {'class': 'checkbox-terms'}}) }}
+	{{ form_errors(form.premiumVideo) }}
+</div>
+
 <div class="form-actions">
 	{{ form_widget(form.submit) }}
 </div>

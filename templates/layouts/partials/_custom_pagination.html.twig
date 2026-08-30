@@ -1,0 +1,39 @@
+{% if pageCount > 1 %}
+	<nav class="pagination">
+		{% if first is defined and current != first %}
+			<span class="pagination-item first">
+				<a href="{{ path(route, knp_pagination_query(query, first, options)) }}">&laquo;</a>
+			</span>
+		{% endif %}
+
+		{% if previous is defined %}
+			<span class="pagination-item previous">
+				<a rel="prev" href="{{ path(route, knp_pagination_query(query, previous, options)) }}">&lsaquo;</a>
+			</span>
+		{% endif %}
+
+		<div class="pagination-pages">
+			{% for page in pagesInRange %}
+				{% if page != current %}
+					<span class="pagination-item page">
+						<a href="{{ path(route, knp_pagination_query(query, page, options)) }}">{{ page }}</a>
+					</span>
+				{% else %}
+					<span class="pagination-item current">{{ page }}</span>
+				{% endif %}
+			{% endfor %}
+		</div>
+
+		{% if next is defined %}
+			<span class="pagination-item next">
+				<a rel="next" href="{{ path(route, knp_pagination_query(query, next, options)) }}">&rsaquo;</a>
+			</span>
+		{% endif %}
+
+		{% if last is defined and current != last %}
+			<span class="pagination-item last">
+				<a href="{{ path(route, knp_pagination_query(query, last, options)) }}">&raquo;</a>
+			</span>
+		{% endif %}
+	</nav>
+{% endif %}

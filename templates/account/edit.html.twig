@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier mon profil
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('styles/account/editAccount.css') }}">
+{% endblock %}
+
+{% block body %}
+	<div class="register-form-page">
+		
+		<h1 class="page-title">{{"usermonForm.title"|trans}}</h1>
+
+		{{ form_errors(usermonForm) }}
+
+		{{ form_start(usermonForm) }}
+		<div class="form-group">
+			{{ form_label(usermonForm.lastname) }}
+			{{ form_widget(usermonForm.lastname, {'attr': {'class': 'form-input'}}) }}
+			{{ form_errors(usermonForm.lastname) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(usermonForm.firstname) }}
+			{{ form_widget(usermonForm.firstname, {'attr': {'class': 'form-input'}}) }}
+			{{ form_errors(usermonForm.firstname) }}
+		</div>
+
+		<div class="form-actions">
+			<a href="{{ path('app_account') }}" class="btn-cancel">{{"usermonForm.cancel"|trans}}</a>
+			<button type="submit" class="btn-submit">{{"usermonForm.submit"|trans}}</button>
+		</div>
+		{{ form_end(usermonForm) }}
+	</div>
+{% endblock %}

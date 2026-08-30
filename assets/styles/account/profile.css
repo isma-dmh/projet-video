@@ -1,0 +1,266 @@
+.profile-page {
+    background-color: #0d0d0d;
+    min-height: 100vh;
+    padding-bottom: 60px;
+}
+
+/* Bandeau de bienvenue */
+.welcome-banner {
+    background-color: #10b981;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* En-tête profil */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 48px 20px 40px 20px;
+}
+
+.profile-title {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 32px 0;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 16px;
+    border: 2px solid #2d2d2d;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.profile-email {
+    color: #9ca3af;
+    font-size: 13px;
+    margin: 0 0 4px 0;
+}
+
+.profile-name {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+}
+
+.profile-created {
+    color: #6b7280;
+    font-size: 13px;
+    margin: 0 0 20px 0;
+}
+
+.btn-edit-profile {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 1px solid #6366f1;
+    color: #6366f1;
+    background-color: transparent;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-edit-profile:hover {
+    background-color: #6366f1;
+    color: #ffffff;
+}
+
+/* Section vidéos */
+.profile-videos {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-title {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 32px 0;
+}
+
+.empty-state {
+    color: #6b7280;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.video-card {
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-2px);
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: #0d0d0d;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    background-color: rgba(220, 38, 38, 0.9);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.video-menu-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #ffffff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.video-info {
+    padding: 16px;
+}
+
+.video-info-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.video-title {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.video-star {
+    color: #fbbf24;
+    flex-shrink: 0;
+}
+
+.video-description {
+    color: #9ca3af;
+    font-size: 13px;
+    margin: 6px 0 16px 0;
+}
+
+.video-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.video-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-video-action {
+    padding: 6px 14px;
+    border-radius: 6px;
+    background-color: #2d2d2d;
+    color: #d1d5db;
+    font-size: 12px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.delete {
+ color: var(--accent);
+ border: none;
+ font-weight: 500;
+}
+
+.btn-video-action:hover {
+    background-color: #6366f1;
+    color: #ffffff;
+}
+
+.delete:hover {
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+.video-date {
+    color: #6b7280;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.info-icon {
+    cursor: help;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .videos-grid {
+        grid-template-columns: 1fr;
+    }
+}

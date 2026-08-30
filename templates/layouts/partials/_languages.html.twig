@@ -1,9 +1,9 @@
 {% if app.request.locale == 'en' %}
 	<a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}" class="btn languages">
-		<span class="fi fi-fr"></span>
+		<span class="fi fi-gb"></span>
 	</a>
 {% else %}
 	<a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'en'})) }}" class="btn languages">
-		<span class="fi fi-gb"></span>
+		<span class="fi fi-fr"></span>
 	</a>
 {% endif %}

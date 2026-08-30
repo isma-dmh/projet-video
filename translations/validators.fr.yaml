@@ -175,3 +175,9 @@ Error: Erreur
 'Please enter a valid week.': 'Veuillez entrer une semaine valide.'
 'Please enter a valid UUID.': 'Veuillez entrer un UUID valide.'
 inappropriateWords.message: "Ceci contient un mot inapproprié '{{ word }}' !"
+'There is already an account with this email': 'Un compte existe déjà avec cette adresse email'
+'You should agree to our terms.': 'Vous devez accepter nos conditions.'
+'Please enter a password': 'Veuillez saisir un mot de passe'
+'Your password should be at least {{ limit }} characters': 'Votre mot de passe doit contenir au moins {{ limit }} caractères'
+'Please enter your email': 'Veuillez introduire votre adresse Email'
+'The password fields must match.': 'Les mots de passe doivent être identiques.'

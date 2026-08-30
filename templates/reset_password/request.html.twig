@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reset your password
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('styles/reset/request.css') }}">
+{% endblock %}
+
+{% block body %}
+	{% for flash_error in app.flashes('reset_password_error') %}
+		<div class="error" role="alert">{{ flash_error }}</div>
+	{% endfor %}
+
+	<div class="register-form-page">
+		<h1 class="page-title">{{"requestForm.title"|trans}}</h1>
+		{{ form_start(requestForm) }}
+		{{ form_row(requestForm.email) }}
+
+		<p class="description">{{ "requestForm.description"|trans }}</p>
+		<button class="btn-submit">{{ "requestForm.submit"|trans }}</button>
+		{{ form_end(requestForm) }}
+	</div>
+{% endblock %}

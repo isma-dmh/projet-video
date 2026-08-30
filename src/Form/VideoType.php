@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Video;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -32,6 +33,11 @@ class VideoType extends AbstractType
                 'attr' => [
                     'placeholder' => 'videoForm.placeholder.description',
                 ],
+            ])
+            ->add('premiumVideo', CheckboxType::class, [
+                "label" => "videoForm.label.premium",
+                "required" => false
+
             ])
             ->add('submit', SubmitType::class, [
                 'label' => $options["button_label"],

@@ -28,6 +28,19 @@ main {
 
 .error {
     background: var(--accent);
+}
+
+.success {
+    background: #10b981;
+}
+
+.info {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.error,
+.success,
+.info {
     text-align: center;
     padding: 0.5rem 0;
     border-radius: 5px;

@@ -38,6 +38,9 @@ class Video
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
+    #[ORM\Column]
+    private ?bool $premiumVideo;
+
     use Timestampable;
 
     public function getId(): ?int
@@ -89,6 +92,18 @@ class Video
     public function setUser(?User $user): static
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function isPremiumVideo(): ?bool
+    {
+        return $this->premiumVideo;
+    }
+
+    public function setPremiumVideo(bool $premiumVideo): static
+    {
+        $this->premiumVideo = $premiumVideo;
 
         return $this;
     }

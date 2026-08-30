@@ -9,10 +9,22 @@
 {% endblock %}
 
 {% block body %}
+	{% if app.user %}
+
+		{% include "layouts/partials/_search_data.html.twig" with {
+	formSearch: formSearch
+} only %}
+		{% if query and videos|length > 0 %}
+			<p class="search-results-info">{{ 'video.search.results'|trans({'count': videos|length, 'query': query}) }}</p>
+		{% endif %}
+	{% endif %}
+
 	<div class="video-grid">
 		{% for video in videos %}
-			<article class="card-video">
-				<iframe class="thumb-wrap" src={{"#{video.videoLink}?mute=1"}} frameborder="0"></iframe>
+			<article class="card-video{% if video.premiumVideo %} premium{% endif %}">
+				<div class="thumb-wrap">
+					<iframe src="{{video.videoLink}}?mute=1" frameborder="0" title="{{video.title }}"></iframe>
+				</div>
 				<div class="card-video-body">
 					<div class="meta">
 						<a href="{{ path('app_video_show', {'id': video.id}) }}" class="title">
@@ -21,7 +33,7 @@
 						<p class="description">{{ video.description|u.truncate(25,". . .",false) }}</p>
 						<p class="stats">{{ video.createdAt|ago }}</p>
 						<p class="author">
-							{{"Ajoutée par"|trans}}
+							{{ 'video.author'|trans }}
 							{{ video.user.firstname ~" "~video.user.lastname }}
 						</p>
 					</div>
@@ -29,8 +41,15 @@
 			</article>
 		{% else %}
 			<div class="empty-state">
-				<p>Aucune vidéo pour le moment.</p>
+				{% if query is empty %}
+					<p>{{ 'video.empty'|trans }}</p>
+				{% else %}
+					<p>{{ 'video.search.empty'|trans({'query': query}) }}</p>
+				{% endif %}
 			</div>
 		{% endfor %}
+	</div>
+	<div class="navigation d-flex justify-content-center mb8">
+		{{ knp_pagination_render(videos) }}
 	</div>
 {% endblock %}

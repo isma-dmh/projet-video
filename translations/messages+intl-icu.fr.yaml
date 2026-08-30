@@ -1,17 +1,74 @@
-'Ajouter une nouvelle vidéo': 'Ajouter une nouvelle vidéo'
-'Éditer la video': 'Éditer la video'
+"Ajouter une nouvelle vidéo": "Ajouter une nouvelle vidéo"
+"Éditer la video": "Éditer la video"
 videoForm.label.title: Titre
-videoForm.label.videoLink: 'Lien de la vidéo'
+videoForm.label.videoLink: "Lien de la vidéo"
 videoForm.label.description: Description
-videoForm.label.submit: 'Publier la vidéo'
-videoForm.label.update: 'Éditer la vidéo'
-videoForm.placeholder.title: 'Titre de la vidéo'
-videoForm.placeholder.description: 'Décris ta vidéo en quelques mots...'
-'Ajoutée par': 'Ajoutée par'
-'Please sign in': Connexion
+videoForm.label.premium: "Video premium"
+videoForm.label.submit: "Publier la vidéo"
+videoForm.label.update: "Éditer la vidéo"
+videoForm.placeholder.title: "Titre de la vidéo"
+videoForm.placeholder.description: "Décris ta vidéo en quelques mots..."
+video.author: "Ajoutée par"
+"Please sign in": Connexion
 login.email: Email
-login.password: 'Mot de passe'
-login.submit: 'Se connecter'
-login.forgot: 'Mot de passe oublié ?'
-'Not registered yet ?': 'Pas inscrit ?'
-'Create an account': 'Créer un compte'
+login.password: "Mot de passe"
+login.submit: "Se connecter"
+login.forgot: "Mot de passe oublié ?"
+"Not registered yet ?": "Pas inscrit ?"
+"Create an account": "Créer un compte"
+registrationForm.lastname: Nom
+registrationForm.firstname: Prénom
+registrationForm.email: Email
+registrationForm.plainPassword: "Mot de passe"
+registrationForm.agreeTerms: "Accepter les conditions"
+registrationForm.submit: "S'inscrire"
+registrationForm.title: Inscription
+registrationController.registered: "Votre compte a bien été créé."
+registrationController.alreadyConnected: "Vous êtes déjà connecté !"
+registrationController.emailVerified: "Votre adresse email a bien été vérifiée."
+securityController.alreadyConnected: "Vous êtes déjà connecté !"
+requestForm.title: "Réinitialiser votre mot de passe"
+requestForm.email: Email
+requestForm.description: "Entrez votre adresse e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe."
+requestForm.submit: Réinitialiser
+resetPassword.emailSent.title: "Email envoyé"
+resetPassword.emailSent.description: "Si un compte correspondant à votre adresse email existe, un email contenant un lien pour réinitialiser votre mot de passe vient de vous être envoyé."
+resetPassword.emailSent.expiry: "Ce lien expirera dans {time} heure(s)."
+resetPassword.emailSent.noEmail: "Vous n'avez rien reçu ? Vérifiez votre dossier spam ou"
+resetPassword.emailSent.tryAgain: réessayez
+resetForm.title: "Réinitialiser votre mot de passe"
+resetForm.password: "Nouveau mot de passe"
+resetForm.repeatPassword: "Répeter Mot de passe"
+resetForm.submit: Réinitialiser
+"Account successfuly updated !": "Compte mis à jour avec succès !"
+profile.title: "Mon profil"
+profile.welcome: "Bienvenue {name}"
+profile.myProfile: "Mon profil"
+profile.createdAt: "Compte créé le {date}"
+profile.editButton: "Modifier profil"
+profile.myVideos: "Mes vidéos"
+profile.noVideos: "Aucune vidéo publiée"
+profile.details: Détails
+profile.edit: Éditer
+profile.delete: Supprimer
+profile.delete.confirm: "Êtes-vous sûr de vouloir supprimer cette vidéo ?"
+profile.postedAgo: "{time} par {author}"
+usermonForm.title: "Éditer profil"
+usermonForm.cancel: Annuler
+usermonForm.submit: Éditer
+userForm.firstname: Prénom
+userForm.lastname: Nom
+accountController.account.NotConnected: "Connectez-vous pour accéder a votre profil !"
+accountController.edit.NotConnected: "Connectez-vous pour modifier votre profil !"
+videoController.edit.successfully: "La vidéo a été modifié avec succès !"
+videoController.create.NotConnected: "Connectez-vous pour ajouter une video ! "
+videoController.create.NotVerified: "Valider votre profil pour ajouter une video ! "
+videoController.create.successfully: "La vidéo a été ajouté avec succès !"
+videoController.show.NotVerified: "Accès refusé !"
+videoController.edit.NotConnected: "Connectez-vous pour modidifier une vidéo !"
+videoController.edit.NotUser: "Accès refusé !"
+videoController.delete: "La vidéo « {title} » a bien été supprimée."
+videoController.delete.delete_error: "La suppression de la vidéo a échoué. Veuillez réessayer."
+video.search.results: '{count, plural, one {# vidéo trouvée avec le terme "{query}"} other {# vidéos trouvées avec le terme "{query}"}}'
+video.search.empty: 'Aucune vidéo trouvée avec le terme "{query}"'
+video.empty: "Aucune vidéo pour le moment."

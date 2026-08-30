@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ "profile.title"|trans }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('styles/account/profile.css') }}">
+{% endblock %}
+
+
+{% block body %}
+	<div
+		class="profile-page">
+
+		<!-- En-tête profil -->
+		<div class="profile-header">
+			<h1 class="profile-title">{{ "profile.myProfile"|trans }}</h1>
+
+			<div
+				class="profile-avatar">
+				{# {% if app.user.avatar %}
+																																									<img src="{{ asset(app.user.avatar) }}" alt="{{ user.firstname }}">
+																																								{% else %} #}
+				<div class="avatar-placeholder">
+					<img src="{{ asset("images/user.svg") }}" alt="{{ app.user.firstname }}">
+				</div>
+				{# {% endif %} #}
+			</div>
+
+			<p class="profile-email">{{ app.user.email }}</p>
+			<h2 class="profile-name">{{ app.user.firstname }}
+				{{ app.user.lastname }}</h2>
+			<p class="profile-created">
+				{{ "profile.createdAt"|trans({'date': app.user.createdAt|date('d/m/Y H:i')}) }}
+			</p>
+
+			<a href="{{ path('app_account_edit') }}" class="btn-edit-profile">
+				{{ "profile.editButton"|trans }}
+			</a>
+		</div>
+
+		<!-- Mes vidéos -->
+		<div class="profile-videos">
+			<h2 class="section-title">{{ "profile.myVideos"|trans }}</h2>
+
+			{% if app.user.videos is empty %}
+				<p class="empty-state">{{ "profile.noVideos"|trans }}</p>
+			{% else %}
+				<div class="videos-grid">
+					{% for video in app.user.videos %}
+						<div class="video-card">
+
+							<iframe class="thumb-wrap" src={{"#{video.videoLink}?mute=1"}} frameborder="0"></iframe>
+							<button class="video-menu-btn" aria-label="menu">⋮</button>
+
+
+							<div class="video-info">
+								<div class="video-info-header">
+									<p class="video-title">{{ video.title }}</p>
+
+								</div>
+								<p class="video-description">{{ video.description|slice(0, 40) }}...</p>
+
+								<div class="video-footer">
+									<div class="video-actions">
+										<a href="{{ path('app_video_show', {id: video.id}) }}" class="btn-video-action">
+											{{ "profile.details"|trans }}
+										</a>
+										<a href="{{ path('app_video_edit', {id: video.id}) }}" class="btn-video-action">
+											{{ "profile.edit"|trans }}
+										</a>
+										{{ include("video/_delete_form.html.twig") }}
+									</div>
+									<span class="video-date">
+										{{ "profile.postedAgo"|trans({'time': video.createdAt|ago, 'author': app.user.firstname ~ ' ' ~ app.user.lastname}) }}
+										<span class="info-icon" title="{{ video.createdAt|date('d/m/Y H:i') }}">ⓘ</span>
+									</span>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			{% endif %}
+		</div>
+
+	</div>
+
+{% endblock %}

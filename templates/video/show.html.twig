@@ -22,6 +22,15 @@
 				{{"Ajoutée par"|trans}}
 				{{ video.user.firstname ~" "~video.user.lastname }}
 			</p>
+			{% if app.user.email === video.user.email %}
+				<div class="video-actions">
+					<a href="{{ path('app_video_edit', {id: video.id}) }}" class="btn-video-action">
+						<img src="{{asset('svg/edit.svg')}}" alt="edit">
+					</a>
+					{{ include("video/_delete_form.html.twig") }}
+				</div>
+			{% endif %}
+
 			<p class="description">{{ video.description }}</p>
 		</div>
 	</div>

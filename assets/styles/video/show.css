@@ -54,6 +54,67 @@
     border-top: 1px solid #272727;
 }
 
+/* ---------- Actions (edit / delete) ---------- */
+.video-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.video-actions form {
+    margin: 0;
+}
+
+/* Style commun edit + delete */
+.btn-video-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding: 0 16px;
+    background-color: var(--surface);
+    color: var(--text);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 14px;
+    font-family: inherit;
+    line-height: 1;
+    text-decoration: none;
+    appearance: none;
+    -webkit-appearance: none;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-video-action:hover {
+    background-color: var(--accent);
+    transform: translateY(-1px);
+}
+
+/* Le lien edit ne contient qu'une icône -> on le rend carré */
+a.btn-video-action {
+    width: 36px;
+    padding: 0;
+}
+
+a.btn-video-action img {
+    width: 18px;
+    height: 18px;
+}
+
+/* Le bouton delete a du texte -> style distinct en rouge */
+.btn-video-action.delete {
+    background-color: var(--surface);
+    color: #e63946;
+}
+
+.btn-video-action.delete:hover {
+    background-color: #e63946;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
 /* ---------- Lien retour ---------- */
 .back-link {
     display: inline-block;

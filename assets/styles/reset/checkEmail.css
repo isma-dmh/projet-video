@@ -1,0 +1,64 @@
+.reset-password-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.reset-password-card {
+    border-radius: 12px;
+    padding: 48px 40px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.reset-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.page-title {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+}
+
+.reset-text {
+    color: #d1d5db;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+}
+
+.reset-expiry {
+    color: #9ca3af;
+    font-size: 13px;
+    margin: 0 0 32px 0;
+}
+
+.reset-footer {
+    border-top: 1px solid #2d2d2d;
+    padding-top: 24px;
+}
+
+.reset-footer p {
+    color: #9ca3af;
+    font-size: 14px;
+    margin: 0;
+}
+
+.reset-footer a {
+    color: skyblue;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.reset-footer a:hover {
+    color: #818cf8;
+    text-decoration: underline;
+}
